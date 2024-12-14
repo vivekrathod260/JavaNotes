@@ -1,0 +1,171 @@
+########################################## JDK JRE JVM ################################
+JDK (Java Development Kit):
+{
+    1) JRE (Java Runtime Environment):
+    {
+        i) JVM (Java Virtual Machine)
+        ii) Java class libraries        
+    }
+
+    2) development tools (javac, debugger)
+}
+
+first.java ----( javac )----> first.class ----( java )----> program output
+
+
+####################################  Hello World  ######################################
+import java.lang.*;
+public class Hello
+{
+    public static void main(String args[])
+    {
+        System.out.println("Hello world");
+    }
+}
+
+compile : javac Hello.java
+run : java Hello (java Hello.class gives error)
+argumensts : java Hello arg1 arg2
+
+Note : .class file (byte code) name is same as of class containing main function (but when class is public then filename and classname must be same)
+Note : import java.lang.*; If not imported then it will automatically get imported
+Note : main function must return void
+Note : arguments must be captured in main function
+
+#################################### printing on screen #######################################
+System.out.println("Hello world"); => print + new line
+System.out.print("Hello world"); => print only
+
+Print numbers :
+System.out.println(99);
+System.out.println(99+1);
+System.out.println("sum is "+(99+1));
+
+###################################### Reading from keyboard ##################################
+import java.lang.*;
+import java.util.*; // this contain Scanner class
+public class Hello
+{
+    public static void main(String args[])
+    {
+        int a;
+        string name, fullname;
+        Scanner sc = new Scanner(System.in);
+        a = sc.nextInt();
+        name = sc.next();
+        fullname = sc.nextLine();
+
+        System.out.println(a+" "+name+" "+fullname);
+    }
+}
+
+Scanner methods:
+nextByte()
+nextShort()
+nextInt()
+nextLong()
+nextFloat()
+nextDouble()
+nextBoolean()
+nextChar()
+next()          => get new word space is delimiter
+nextLine()      => get new word \n is delimiter
+
+hasNextInt()    => check is incomming data is int
+hasNextFloat()  => check is incomming data is float
+
+Note : javap java.util.Scanner => gives all properties and methods of a class mentioned
+
+
+Scanner sc = new Scanner(System.in);
+sc.useRadix(2); // from now on scanner will take input base 2
+a = sc.nextInt(); // if 1010 provided output => a = 10
+
+###################################### Data types ###############################################
+byte, 1
+short, 2
+int, 4
+long, 8
+float, 4
+double, 8
+char, 2
+boolean, min 1 bit to max 1 byte (depends on jvm)
+
+Wrapper class :
+Byte
+Short
+Integer
+Long
+Float
+Double
+Boolean
+Character
+
+Wrapper class properties:
+Integer.MIN_VALUE
+Integer.MAX_VALUE
+Integer.BYTE
+Integer.MAX_VALUE
+
+
+int myNum = 5;
+long myLongNum = 5.99l; // can write L instead of l
+float myFloatNum = 5.99f; // can write F instead of f
+float myDoubleNum = 5.99d; // can write D instead of d
+char myLetter = 'A';
+boolean myBool = true;
+String myText = "Hello";
+
+int x = 5, y = 6, z = 50;
+
+int x, y, z;
+x = y = z = 50;
+
+printing before initializing give error: int a; System.out.println(a); => error
+
+############################# Variable ######################################
+Should not be keyword
+It is case sensitive
+Camel case
+contain: Alphabet, numbers , _ or $
+Dosen't start with numbers
+No limit on Variable name length
+shoul no be a class name if class is in useRadix
+
+############################## Literals ##################################
+Literals are constant values that are used in our program
+string literal
+int literal
+double literal => any decimal literal in program is considered as double type
+
+Writing integer literal using other numberinig System:
+int num = 10; //decimal
+int num = 0b1010; //binary
+int num = 012; //octal
+int num = 0xA; //hexadecimal
+
+Representation:
+long => l or L
+float => f or F
+double = > d or D
+
+long num = 999_999_123; gives => 999999123 => we can separate numbers using _ for better readibility
+long num = 999_999.123;
+long num = 999_999.123_; // wrong
+long num = 999_999._123; // wrong
+long num = 999_999_.123; // wrong
+
+
+Note : java has byte short for backward compatibility, saving space and better utilization of cpu
+
+############## how numbers are in binary from #######################
+00000000 => +ve 0 (first bit is sign bit always)
+01111111 => 127
+
+negative numbers are stored in 2's compliment
+ex: -5
+5 =>                00000101
+1's compliment =>   11111010
+for 2's compliment add 1 to 1's compliment (11111010)base2 + (1)base2 => 11111011 => -5
+
+

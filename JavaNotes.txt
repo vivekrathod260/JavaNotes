@@ -96,8 +96,8 @@ Byte
 Short
 Integer
 Long
-Float
-Double
+Float => best for 6-7 digits after .
+Double => best for 14-15 digits after .
 Boolean
 Character
 
@@ -151,6 +151,7 @@ double = > d or D
 
 long num = 999_999_123; gives => 999999123 => we can separate numbers using _ for better readibility
 long num = 999_999.123;
+long num = 999_999.12_33;
 long num = 999_999.123_; // wrong
 long num = 999_999._123; // wrong
 long num = 999_999_.123; // wrong
@@ -168,4 +169,18 @@ ex: -5
 1's compliment =>   11111010
 for 2's compliment add 1 to 1's compliment (11111010)base2 + (1)base2 => 11111011 => -5
 
+float represention ex: 123.44 => 12344E-2
+
+####################### Compiler vs Interpreter #############################
+Compiler: 
+* A compiler translates code from a high-level programming language into machine code before the program runs.
+* fast
+* Requires only onece
+* if error cannot compile
+
+Interpreter:
+* An interpreter translates code written in a high-level programming language into machine code line-by-line as the code runs. 
+* slow
+* Require all the time to run program
+* if error can proceed upto error point
 
